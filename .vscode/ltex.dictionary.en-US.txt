@@ -28,3 +28,5 @@ Pubspec
 Keybase
 -Dhttpd
 -DCDG
+-PlantUML
+-PlantUML
