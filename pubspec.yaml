@@ -40,6 +40,7 @@ dependencies:
   device_info_plus: ^1.0.0
   flutter_state_notifier: ^0.7.0
   provider: ^5.0.0
+  dependency_injection_flutter: ^2.0.0
 
 
 

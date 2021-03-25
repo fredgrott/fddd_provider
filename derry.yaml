@@ -82,16 +82,16 @@ prepdir:
 # https://pub.dev/packages/junitreport
 test:
   win64:
-    - flutter test --machine | tojunit -o reports\test\flutter_deep_dive-test.xml
-    - junit2html reports\test\flutter_deep_dive-test.xml reports\test\flutter_deep_dive-test.html
+    - flutter test --machine | tojunit -o reports\test\fddd_provider-test.xml
+    - junit2html reports\test\fddd_provider-test.xml reports\test\fddd_provider-test.html
     - echo widget tests reports created
   mac64:
-    - flutter test --machine | tojunit -o reports/test/flutter_deep_dive-test.xml
-    - junit2html reports/test/flutter_deep_dive-test.xml reports/test/flutter_deep_dive-test.html
+    - flutter test --machine | tojunit -o reports/test/fddd_provider-test.xml
+    - junit2html reports/test/fddd_provider-test.xml reports/test/fddd_provider-test.html
     - echo widget tests reports created
   linux64:
-    - flutter test --machine | tojunit -o reports/test/flutter_deep_dive-test.xml
-    - junit2html reports/test/flutter_deep_dive-test.xml reports/test/flutter_deep_dive-test.html
+    - flutter test --machine | tojunit -o reports/test/fddd_provider-test.xml
+    - junit2html reports/test/fddd_provider-test.xml reports/test/fddd_provider-test.html
     - echo widget tests reports created
 
 # win64 flutter test --coverage --coverage-path reports\coverage
@@ -127,16 +127,16 @@ mycoverage:
 # https://pub.dev/packages/golden_toolkit
 mygoldens:
   win64:
-    - flutter test --update-goldens --machine | tojunit -o reports\test\flutter_deep_dive-test.xml
-    - junit2html reports\test\flutter_deep_dive-test.xml reports\test\flutter_deep_dive-test.html
+    - flutter test --update-goldens --machine | tojunit -o reports\test\fddd_provider-test.xml
+    - junit2html reports\test\fddd_provider-test.xml reports\test\fddd_provider-test.html
     - echo goldens report generated
   mac64:
-    - flutter test --update-goldens --machine | tojunit -o reports/test/flutter_deep_d-vie-test.xml
-    - junit2html reports/test/flutter_deep_dive-test.xml reports/test/flutter_deep_dive-test.html
+    - flutter test --update-goldens --machine | tojunit -o reports/test/fddd_provider-test.xml
+    - junit2html reports/test/flutter_deep_dive-test.xml reports/test/fddd_provider-test.html
     - echo goldens report generated
   linux64:
-    - flutter test --update-goldens --machine | tojunit -o reports/test/flutter-deep_dive-test.xml
-    - junit2html reports/test/flutter_deep_dive-test.xml reports/test/flutter_deep_dive-test.html
+    - flutter test --update-goldens --machine | tojunit -o reports/test/fddd_provider-test.xml
+    - junit2html reports/test/fddd_provider-test.xml reports/test/fddd_provider-test.html
     - echo goldens report generated
 
 # can be executed via
@@ -145,16 +145,16 @@ mygoldens:
 # https://pub.dev/packages/dcdg
 uml:
   win64:
-    - dcdg -o reports\uml\flutter_deep_dive.puml
-    - java -jar %PLANTUML% reports\uml\flutter_deep_dive.puml -config skinparams.iuml
+    - dcdg -o reports\uml\fddd_provider.puml
+    - java -jar %PLANTUML% reports\uml\fddd_provider.puml -config skinparams.iuml
     - echo uml png generated
   mac64:
-    - dcdg -o reports/uml/flutter_deep_dive.puml
-    - java -jar $PLANTUML reports/uml/flutter_deep_dive.puml -config skinparams.iuml
+    - dcdg -o reports/uml/fddd_provider.puml
+    - java -jar $PLANTUML reports/uml/fddd_provider.puml -config skinparams.iuml
     - echo uml png generated
   linux64:
-    - dcdg -o reports/uml/flutter_deep_dive.puml
-    - java -jar $PLANTUML reports/uml/flutter_deep_dive.puml -config skinparams.iuml
+    - dcdg -o reports/uml/fddd_provider.puml
+    - java -jar $PLANTUML reports/uml/fddd_provider.puml -config skinparams.iuml
     - echo uml png generated
 
     
@@ -170,20 +170,20 @@ docs:
   win64:
     - dartdoc
     - mkdir doc\api\images
-    - move images\git-project-card.png doc\api\images
-    - move images\screenshot.png doc\api\images
+    - copy media\git-repo-card.png doc\api\images
+    - copy media\screenshot.png doc\api\images
     - echo api docs generated
   mac64:
     - dartdoc
     - mkdir doc/api/images
-    - mv images/git-project-card.png doc/api/images
-    - mv images/screenshot.png doc/api/images
+    - cp media/git-repo-card.png doc/api/images
+    - cp media/screenshot.png doc/api/images
     - echo api docs generated
   linux64:
     - dartdoc
     - mkdir doc/api/images
-    - mv images/git-project-card.png doc/api/images
-    - mv images/screenshot.png doc/api/images
+    - cp media/git-repo-card.png doc/api/images
+    - cp media/screenshot.png doc/api/images
     - echo api docs generated
 
 integration:
