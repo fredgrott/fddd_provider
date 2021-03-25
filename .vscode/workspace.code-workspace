@@ -4,7 +4,44 @@
 			"path": ".."
 		}
 	],
-	"settings": {},
+	"settings": {
+		"debug.openDebug": "openOnDebugBreak",
+		"workbench.editor.showTabs": true,
+    "editor.minimap.enabled": false,
+    "editor.codeLens": false,
+    "workbench.activityBar.visible": true,
+    "editor.renderWhitespace": "all",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 25,
+    "editor.letterSpacing": 0,
+		"terminal.integrated.fontSize": 18,
+    "terminal.integrated.lineHeight": 1.5,
+    "terminal.integrated.cursorBlinking": false,
+    "terminal.integrated.cursorStyle": "line",
+    "editor.emptySelectionClipboard": false,
+    "editor.quickSuggestionsDelay": 0,
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"dart.flutterScreenshotPath":"/screenshots",
+
+
+
+		"[dart]": {
+			"editor.formatOnSave": true,
+		  "editor.formatOnType": true,
+			"editor.rulers": [80],
+			"editor.selectionHighlight": false,
+			"editor.suggest.snippetsPreventQuickSuggestions": false,
+			"editor.suggestSelection": "first",
+			"editor.tabCompletion": "onlySnippets",
+			"editor.wordBasedSuggestions": false,
+			
+
+
+
+		}
+
+	},
 	"extensions": {
 		"recommendations": [
 			"davidlday.languagetool-linter",

@@ -1,33 +1,33 @@
 // Copyright(c) 2021 Fredrick Allan Grott. All rights reserved.
 // Use of this source code is governed by a BSD-style license.
 
-
+import 'package:fddd_provider/presentation/my_app.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_deep_dive/presentation/my_app.dart';
+
 
 
 import 'package:flutter_test/flutter_test.dart';
-
-
-
+import 'package:integration_test/integration_test.dart';
 
 
 void main() {
-
-  // ignore: no-empty-block
-  setUpAll(() async {});
-
+  // docs correction, it needs to go immediately first
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  setUpAll(() async {
+    //IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  });
 
 
   // ignore: no-empty-block
   tearDownAll(() async {});
 
   // ignore: no-empty-block
-  tearDown(() async{});
+  tearDown(() async {});
 
-  group('Basic Simple Unit Test', (){
+
+  group('Basic Simple Unit Test', () {
     // use runAsync when yu have calls to such things as Future.delayed in the testWidgets
-    testWidgets("Counter increments smoke test", (WidgetTester tester) async {
+    testWidgets("Integration Counter increments smoke test", (WidgetTester tester) async {
       // Build our app and trigger a frame.
       await tester.pumpWidget(MyApp());
 
@@ -50,11 +50,13 @@ void main() {
       // Verify that our counter has incremented.
       expect(find.text('0'), findsNothing);
       expect(find.text('1'), findsOneWidget);
-
     });
-    // no need to test for app title via individual test as
-    // instead supply a mock app to do title, see app_title_test
+
+    testWidgets('validate appbar widget', (WidgetTester tester) async {
+      await tester.pumpWidget(MyApp());
+      find.ancestor(of: find.byType(AppBar), matching: find.text('Flutter Demo Home Page'));
+    });
+
 
   });
-
 }

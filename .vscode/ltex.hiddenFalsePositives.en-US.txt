@@ -1,0 +1,2 @@
+{"rule":"WORD_CONTAINS_UNDERSCORE","sentence":"^\\QFddd_provider\\E$"}
+{"rule":"WORD_CONTAINS_UNDERSCORE","sentence":"^\\QFddd_provider\\E$"}
